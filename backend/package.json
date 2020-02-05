@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Home Interview Test",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
-  },
   "author": "Jay Gangrae Jo",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "dev": "nodemon index.js"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
@@ -22,6 +23,9 @@
     "nodemon": "^2.0.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "jest": "^23.6.0",
+    "supertest": "^3.4.1",
+    "typescript": "3.4.3"
   }
 }
