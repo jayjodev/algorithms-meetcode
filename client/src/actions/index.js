@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AUTH_USER, AUTH_ERROR, RESULT, RESULT_ERROR } from './types';
+import { AUTH_USER, AUTH_ERROR, SERVER_ERROR, USER_INPUT, RESULT_PRIMES, RESULT_MEDIAN_PRIMES } from './types';
 
 // { email, password }
 export const signup = (formProps, callback) => async dispath => {
@@ -43,11 +43,17 @@ export const calculation = (formProps, callback) => async dispath => {
         const response = await axios.post('http://localhost:3001/algorithm',
             formProps
         );
-        dispath({ type: RESULT, payload: response.data});
-        localStorage.setItem('result', response.data);
+        if (response.data.userInput && response.data.primes && response.data.medianPrime ){
+            dispath({ type: USER_INPUT, payload: response.data.userInput});
+            dispath({ type: RESULT_PRIMES, payload: response.data.primes});
+            dispath({ type: RESULT_MEDIAN_PRIMES, payload: response.data.medianPrime});
+        }
+        else {
+            dispath({ type: RESULT_MEDIAN_PRIMES, payload: response.data});
+        }
         callback();
     }
     catch (e) {
-        dispath({ type: RESULT_ERROR, payload: 'Server Error, result is not calculated.' })
+        dispath({ type: SERVER_ERROR, payload: 'Server Error, result is not calculated.' })
     }
 };

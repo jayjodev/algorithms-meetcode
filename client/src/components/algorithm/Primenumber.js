@@ -11,11 +11,9 @@ class Primenumber extends Component {
     };
     render() {
         const { handleSubmit } = this.props;
-        const userInput = this.props.userInput;
-        const primes = JSON.stringify(this.props.primes);
-        const medianPrime = JSON.stringify(this.props.medianPrime);
-
-        // const result2 = Object.keys(result).map(obj => result[obj])
+        const median_primes = JSON.stringify(this.props.result_median_primes);
+        const primes = JSON.stringify(this.props.result_primes);
+        const user_input = JSON.stringify(this.props.user_input);
 
         return (
             <form onSubmit={handleSubmit(this.onSubmit)}>
@@ -29,15 +27,15 @@ class Primenumber extends Component {
                     />
                 </fieldset>
                 <div>
-                    <h2>The median numbers of primes numbers:  {medianPrime}</h2>
-                    
+                    {/* data ? req.user && req.user[data] : req.user; */}
+                    <h2>Result: {this.props.result_median_primes ? median_primes : null}</h2>
                     <h6>**Additional information**</h6>
-                    <h6>User Input:{userInput} </h6>
-                    <h6>Primes numbers: {primes} </h6>
+                    <h6>Your Input value: {this.props.user_input ? user_input : null} </h6>
+                    <h6>Primes numbers: {this.props.result_primes ? primes : null} </h6>
 
                 </div>
                 <div>
-                    {this.props.errorMessage}
+                    {this.props.server_error}
                 </div>
 
                 <button>Calculate!</button>
@@ -48,10 +46,10 @@ class Primenumber extends Component {
 
 function mapStateToProps(state) {
     return {
-        userInput: state.result.result.userInput,
-        primes: state.result.result.primes,
-        medianPrime: state.result.result.medianPrime,
-        error_message: state.result.error_message
+        user_input: state.result.user_input,
+        result_primes: state.result.result_primes,
+        result_median_primes: state.result.result_median_primes,
+        server_error: state.result.server_error
     }
 }
 

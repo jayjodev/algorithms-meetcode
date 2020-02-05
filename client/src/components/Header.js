@@ -25,7 +25,7 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                <Link to="/">Shopthing</Link>
+                <Link to="/">Shopthing-Test</Link>
                 <div>
                     <h3>Sieve of Eratosthenes algorithm Application</h3>
                 </div>
