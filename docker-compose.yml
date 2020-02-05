@@ -1,0 +1,66 @@
+version: "3"
+services:
+  backend:
+    container_name: backend
+    restart: always
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    # Add volumnes
+    volumes:
+      # Inside container
+      - /backend/node_modules
+      # Outside container
+      - ./backend:/backend
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo_db
+    networks:
+      - shopthing
+      
+  client:
+    container_name: client
+    restart: always
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    # Add volumnes
+    volumes:
+      # Inside container
+      - /client/node_modules
+      # Outside container
+      - ./client:/client
+    ports:
+        - "3002:3002"
+    networks:
+      - shopthing
+          
+  nginx:
+    container_name: ngnix
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - client
+    networks:
+      - shopthing
+
+  mongo_db:
+    container_name: mongo_db
+    restart: always
+    image: mongo
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - shopthing
+  
+volumes:
+  mongo_data:
+
+networks:
+  shopthing:
