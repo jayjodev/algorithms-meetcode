@@ -43,13 +43,16 @@ export const calculation = (formProps, callback) => async dispath => {
         const response = await axios.post('http://localhost:3001/algorithm',
             formProps
         );
-        if (response.data.userInput && response.data.primes && response.data.medianPrime ){
-            dispath({ type: USER_INPUT, payload: response.data.userInput});
-            dispath({ type: RESULT_PRIMES, payload: response.data.primes});
-            dispath({ type: RESULT_MEDIAN_PRIMES, payload: response.data.medianPrime});
+        if (response.data.userInput && response.data.primes && response.data.medianPrime) {
+            dispath({ type: USER_INPUT, payload: response.data.userInput });
+            dispath({ type: RESULT_PRIMES, payload: response.data.primes });
+            dispath({ type: RESULT_MEDIAN_PRIMES, payload: response.data.medianPrime });
         }
         else {
-            dispath({ type: RESULT_MEDIAN_PRIMES, payload: response.data});
+            dispath({ type: USER_INPUT, payload: null });
+            dispath({ type: RESULT_PRIMES, payload: null });
+            dispath({ type: RESULT_MEDIAN_PRIMES, payload: response.data });
+
         }
         callback();
     }
