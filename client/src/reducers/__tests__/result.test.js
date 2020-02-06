@@ -2,7 +2,7 @@ import resultReducer from '../result';
 import { USER_INPUT, RESULT_PRIMES, RESULT_MEDIAN_PRIMES, SERVER_ERROR } from '../../actions/types';
 
 /**
- *  Test Result Reducers : type
+ *  Test result reducer: action type [USER_INPUT, RESULT_PRIMES, RESULT_MEDIAN_PRIMES, SERVER_ERROR]
  */
 
 it('handles actions of type USER_INPUT', () => {
