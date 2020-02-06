@@ -52,7 +52,6 @@ export const calculation = (formProps, callback) => async dispath => {
             dispath({ type: USER_INPUT, payload: null });
             dispath({ type: RESULT_PRIMES, payload: null });
             dispath({ type: RESULT_MEDIAN_PRIMES, payload: response.data });
-
         }
         callback();
     }

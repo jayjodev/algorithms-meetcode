@@ -1,6 +1,8 @@
 ##  Interview Test for `Shopthing`
 
-1. Copy backend environment files in backend folder
+Web IP Address: http://167.99.182.203/
+
+1. Backend environment files in backend folder
     ```code
     $ cp .env.prod .env
     $ cp config.prod .env
@@ -8,23 +10,17 @@
 2. Build the project.
     ```code
     $ docker-compose up -d --build
-    ``` 
-3. Test
+    ```
+3. Test [backend and client]
+    ```
+    $ npm run test
+    ```
+4. Start Manually [backend and client]
     ```
     $ npm run test
     ```
 
-## Features
-
-#### Support Tech
-
-1. docker
-2. nginx
-3. Jest
-4. MongoDB
-
-
-#### Test requirement:
+#### Test Requirement:
 
 `Backend Component`
 Set up an express server with a single route. This
@@ -40,6 +36,6 @@ appropriate error message).
 
 * react
 
-#### Additional functionality
+#### Additional Functionality
 Simple `auth` system for the test
 
