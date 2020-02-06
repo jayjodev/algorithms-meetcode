@@ -31,9 +31,8 @@ it('can display response data', (done) => {
     moxios.wait(() => {
         component.update();
         expect(component.render().text()).toContain('Result: [3,5]');
-        expect(component.render().text()).toContain('Input value: 7');
+        expect(component.render().text()).toContain('Input number: 7');
         expect(component.render().text()).toContain('Primes numbers: [2,3,5,7]');
         done();
     });
-
 });

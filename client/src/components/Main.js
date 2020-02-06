@@ -12,7 +12,8 @@ export default () => {
             <p>
                 <b>Do you need the solution?</b><br />
                 Id: shopthing@shopthing.com<br />
-                Password: password
+                Password: password<br />
+                Design by Jay Gangrae Jo
             </p>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <p>Copyright © 2020 All rights Reserved.</p>

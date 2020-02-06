@@ -31,6 +31,6 @@ it('Header contains three Links', () => {
     expect(component.find('Link').length).toEqual(3)
 });
 
-it('Header component contains Main Text: "Sieve of Eratosthenes algorithm Application"', () => {
-    expect(component.render().text()).toContain('Sieve of Eratosthenes algorithm Application');
+it('Header component contains Main Text: "Sieve of Eratosthenes algorithm Calculator"', () => {
+    expect(component.render().text()).toContain('Sieve of Eratosthenes algorithm Calculator');
 });
