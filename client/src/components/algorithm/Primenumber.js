@@ -29,14 +29,13 @@ class Primenumber extends Component {
                 <div>
                     <h2>Result: {this.props.result_median_primes ? median_primes : null}</h2>
                     <h4>**Additional information**</h4>
-                    <h5>Your Input value: {this.props.user_input ? user_input : null} </h5>
+                    <h5>Input value: {this.props.user_input ? user_input : null} </h5>
                     <h5>Primes numbers: {this.props.result_primes ? primes : null} </h5>
                 </div>
                 <div>
                     {this.props.server_error}
                 </div>
-
-                <button>Calculate!</button>
+                <button className="calculate-median-primes">Calculate!</button>
             </form>
         );
     }
