@@ -1,4 +1,4 @@
-import { SERVER_ERROR, USER_INPUT, RESULT_PRIMES, RESULT_MEDIAN_PRIMES, USER_INPUT_VALIDATION } from '../actions/types';
+import { USER_INPUT, RESULT_PRIMES, RESULT_MEDIAN_PRIMES, SERVER_ERROR } from '../actions/types';
 const INITIAL_STATE = {
     result_median_primes: '',
     result_primes: '',
