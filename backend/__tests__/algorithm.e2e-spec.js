@@ -1,6 +1,5 @@
 const request = require('supertest');
-
-const shopThing_Backend = "http://localhost:3001";
+const shopThing_Backend = 'http://localhost:3001';
 
 const data = {
   "number": 18
@@ -28,4 +27,3 @@ describe('Calculate median prime number', function () {
       });
   });
 });
-
