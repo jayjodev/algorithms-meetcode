@@ -21,7 +21,7 @@ afterEach(() => {
 });
 
 /**
- * Test Hearder Components: divs, links, words
+ * Test Hearder Component: divs, links, words
  */
 it('Header contains three divs', () => {
     expect(component.find('div').length).toEqual(3)
