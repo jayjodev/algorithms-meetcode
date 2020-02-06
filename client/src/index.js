@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Root from './Root'
 import App from './components/App';
-import Welcome from './components/Welcome';
+import Main from './components/Main';
 import Signup from './components/auth/Signup';
 import Signout from './components/auth/Signout';
 import Signin from './components/auth/Signin';
@@ -13,7 +13,7 @@ ReactDOM.render(
     <Root>
         <BrowserRouter>
             <App>
-                <Route path="/" exact component={Welcome} />
+                <Route path="/" exact component={Main} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/signout" component={Signout} />
                 <Route path="/signin" component={Signin} />
