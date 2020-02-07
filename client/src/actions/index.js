@@ -26,7 +26,7 @@ export const signout = () => {
 
 export const signin = (formProps, callback) => async dispath => {
     try {
-        const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}}/signin`,
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}/signin`,
             formProps
         );
         dispath({ type: AUTH_USER, payload: response.data.token });
