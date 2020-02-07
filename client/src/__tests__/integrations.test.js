@@ -7,7 +7,7 @@ import { MemoryRouter } from 'react-router-dom'
 
 beforeEach(() => {
     moxios.install();
-    moxios.stubRequest('http://localhost:3001/algorithm', {
+    moxios.stubRequest(`${process.env.REACT_APP_BACKEND_SERVER}/algorithm`, {
         status: 200,
         response: { userInput: 7, medianPrime: [3, 5], primes: [2, 3, 5, 7] }
     });

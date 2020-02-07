@@ -27,7 +27,7 @@ class Primenumber extends Component {
                     />
                 </fieldset>
                 <br/>
-                <button className="calculate-median-primes">Calculate!</button>
+                <button>Calculate!</button>
                 <div>
                     <h3>Result: {this.props.result_median_primes ? median_primes : null}</h3>
                     <p>

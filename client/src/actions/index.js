@@ -4,7 +4,7 @@ import { AUTH_USER, AUTH_ERROR, SERVER_ERROR, USER_INPUT, RESULT_PRIMES, RESULT_
 // { email, password }
 export const signup = (formProps, callback) => async dispath => {
     try {
-        const response = await axios.post('http://localhost:3001/signup',
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}/signup`,
             formProps
         );
         dispath({ type: AUTH_USER, payload: response.data.token });
@@ -26,7 +26,7 @@ export const signout = () => {
 
 export const signin = (formProps, callback) => async dispath => {
     try {
-        const response = await axios.post('http://localhost:3001/signin',
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}}/signin`,
             formProps
         );
         dispath({ type: AUTH_USER, payload: response.data.token });
@@ -40,7 +40,7 @@ export const signin = (formProps, callback) => async dispath => {
 
 export const calculation = (formProps, callback) => async dispath => {
     try {
-        const response = await axios.post('http://localhost:3001/algorithm',
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}/algorithm`,
             formProps
         );
         if (response.data.userInput && response.data.primes && response.data.medianPrime) {
