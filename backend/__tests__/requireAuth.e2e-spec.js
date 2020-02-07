@@ -1,6 +1,8 @@
 const request = require('supertest');
 const axios = require('axios');
-const shopThing_Backend = 'http://localhost:3001';
+require('dotenv').config()
+
+const shopThing_Backend = process.env.TEST_API_URL || "http://localhost:3001";
 
 const defaultUser = {
     email: "shopthing@shopthing.com",

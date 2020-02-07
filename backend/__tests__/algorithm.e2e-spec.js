@@ -1,5 +1,7 @@
 const request = require('supertest');
-const shopThing_Backend = 'http://localhost:3001';
+require('dotenv').config()
+
+const shopThing_Backend = process.env.TEST_API_URL || "http://localhost:3001";
 
 const data = {
   "number": 18
