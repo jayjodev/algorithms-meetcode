@@ -27,7 +27,7 @@ class Header extends Component {
             <div className="header">
                 <Link to="/">Shopthing-Test</Link>
                 <div>
-                    <h2>Sieve of Eratosthenes algorithm Calculator</h2>
+                    <h2>Algorithm Calculator</h2>
                 </div>
                 {this.renderLinks()}
             </div>
