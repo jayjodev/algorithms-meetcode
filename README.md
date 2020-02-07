@@ -5,7 +5,7 @@ Web IP Address: http://167.99.182.203/
 1. Backend environment files in backend folder
     ```code
     $ cp .env.prod .env
-    $ cp config.prod .env
+    $ cp config.prod.js .config.js
     ```
 2. Client environment files in client folder
     ```code
