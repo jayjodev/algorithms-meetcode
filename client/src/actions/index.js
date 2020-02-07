@@ -40,7 +40,7 @@ export const signin = (formProps, callback) => async dispath => {
 
 export const calculation = (formProps, callback) => async dispath => {
     try {
-        const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}/algorithm`,
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}/algorithm/median-prime-number`,
             formProps
         );
         if (response.data.userInput && response.data.primes && response.data.medianPrime) {

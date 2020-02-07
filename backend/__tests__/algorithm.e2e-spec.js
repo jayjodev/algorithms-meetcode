@@ -14,7 +14,7 @@ const data = {
 describe('Calculate median prime number', function () {
   it('Successfully Calculate median prime number', done => {
     request(shopThing_Backend)
-      .post('/algorithm')
+      .post('/algorithm/median-prime-number')
       .send(data)
       .expect(200)
       // Check three Keys

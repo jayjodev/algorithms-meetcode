@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-class Primenumber extends Component {
+class Medianprime extends Component {
     onSubmit = (formProps) => {
         this.props.calculation(formProps, () => {
         });
@@ -55,4 +55,4 @@ function mapStateToProps(state) {
 export default compose(
     connect(mapStateToProps, actions),
     reduxForm({ form: 'calculation' })
-)(Primenumber);
+)(Medianprime);

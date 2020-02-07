@@ -1,7 +1,7 @@
 const Authentication = require('./controllers/authentication');
-const passportService = require('./services/passport');
-const passport = require('passport');
 const Algorithm = require('./controllers/algorithm');
+const passport = require('passport');
+const passportService = require('./services/passport');
 
 const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignin = passport.authenticate('local', { session: false })
@@ -13,6 +13,6 @@ module.exports = function (app) {
     app.post('/signin', requireSignin, Authentication.signin);
     app.post('/signup', Authentication.signup);
 
-    // Add algorithm for test
-    app.post('/algorithm', Algorithm.algorithm);
+    // Add algorithms
+    app.post('/algorithm/median-prime-number', Algorithm.medianPrimeNumber);
 }

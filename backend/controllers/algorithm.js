@@ -1,4 +1,4 @@
-exports.algorithm = function (req, res) {
+exports.medianPrimeNumber = function (req, res) {
     try {
         const userInput = parseFloat(req.body.number);
 
