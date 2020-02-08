@@ -27,10 +27,11 @@ it('Header contains three divs', () => {
     expect(component.find('div').length).toEqual(3)
 });
 
-it('Header contains three Links', () => {
-    expect(component.find('Link').length).toEqual(3)
-});
+// The test is pending: signup Link is Hided
+// it('Header contains three Links', () => {
+//     expect(component.find('Link').length).toEqual(3)
+// });
 
-it('Header component contains Main Text: "Sieve of Eratosthenes algorithm Calculator"', () => {
-    expect(component.render().text()).toContain('Sieve of Eratosthenes algorithm Calculator');
+it('Header component contains Main Text: "Algorithm Calculator"', () => {
+    expect(component.render().text()).toContain('Algorithm Calculator');
 });

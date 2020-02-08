@@ -2,7 +2,7 @@ const request = require('supertest');
 const axios = require('axios');
 require('dotenv').config()
 
-const shopThing_Backend = process.env.TEST_API_URL || "http://localhost:3001";
+const shopThing_Backend = process.env.BACKEND_SERVER_TEST || "http://localhost:3001";
 
 const defaultUser = {
     email: "shopthing@shopthing.com",

@@ -6,6 +6,17 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    env_file: .env
+    environment: 
+      - BACKEND_PORT=$BACKEND_PORT
+      - BACKEND_SERVER_TEST=$BACKEND_SERVER_TEST
+      - MONGO_PORT=$MONGO_PORT
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+      - MONGO_INITDB_DATABASE=$MONGO_INITDB_DATABASE
+      - DATABASE_USERNAME=$DATABASE_USERNAME
+      - DATABASE_PASSWORD=$DATABASE_PASSWORD
+      - BACKEND_SECRET=$BACKEND_SECRET
     # Add volumnes
     volumes:
       # Inside container
@@ -25,6 +36,10 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    env_file: .env
+    environment: 
+      - NODE_PATH=$NODE_PATH
+      - REACT_APP_BACKEND_SERVER=$REACT_APP_BACKEND_SERVER  
     # Add volumnes
     volumes:
       # Inside container
@@ -48,11 +63,21 @@ services:
       - shopthing
 
   mongo_db:
+    image: mongo:latest
     container_name: mongo_db
-    restart: always
-    image: mongo
+    restart: unless-stopped
+    env_file: .env
+    environment: 
+      - MONGO_PORT=$MONGO_PORT
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+      - MONGO_INITDB_DATABASE=$MONGO_INITDB_DATABASE
+      - DATABASE_USERNAME=$DATABASE_USERNAME
+      - DATABASE_PASSWORD=$DATABASE_PASSWORD
     volumes:
-      - mongo_data:/data/db
+      #: ro, readonly
+      - ./mongodb/db_setup.sh:/docker-entrypoint-initdb.d/db_setup.sh:ro
+      - ./mongodb/mongo_data:/data/db
     ports:
       - "27017:27017"
     networks:
@@ -60,6 +85,6 @@ services:
   
 volumes:
   mongo_data:
-
+    
 networks:
   shopthing:

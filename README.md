@@ -2,24 +2,19 @@
 
 Web IP Address: http://167.99.182.203/
 
-1. Backend environment files in backend folder
-    ```code
-    $ cp .env.prod .env
-    $ cp config.prod.js .config.js
-    ```
-2. Client environment files in client folder
+1. Copy .env file
     ```code
     $ cp .env.prod .env
     ```
-3. Build the project.
+2. Build the project.
     ```code
     $ docker-compose up -d --build
     ```
-4. Test [backend and client]
+3. Test [backend and client]
     ```
     $ npm run test
     ```
-5. Start Manually [backend and client]
+4. Start Manually [backend and client]
     ```
     $ npm run start
     ```

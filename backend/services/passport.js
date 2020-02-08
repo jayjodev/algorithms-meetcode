@@ -1,9 +1,9 @@
 const passport = require('passport');
 const User = require('../models/user');
-const config = require('../config');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
+require('dotenv').config()
 
 // Create Local strategy
 const localOptions = { usernameField: 'email' }
@@ -23,7 +23,7 @@ const localLogin = new LocalStrategy(localOptions, function (email, password, do
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-    secretOrKey: config.secret
+    secretOrKey: process.env.BACKEND_SECRET
 };
 
 const jwtLogin = new JwtStrategy(jwtOptions, function (payload, done) {

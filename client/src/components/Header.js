@@ -16,7 +16,7 @@ class Header extends Component {
         else {
             return (
                 <div >
-                    {/* <Link to="/signup">Sign Up</Link> */}
+                    <Link to="/signup">Sign Up</Link>
                     <Link to="/signin">Sign In</Link>
                 </div>
             )
