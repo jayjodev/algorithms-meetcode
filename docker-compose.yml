@@ -19,6 +19,7 @@ services:
       - BACKEND_SECRET=$BACKEND_SECRET
     # Add volumnes
     volumes:
+      # NOT in production
       # Inside container
       - /backend/node_modules
       # Outside container
@@ -42,6 +43,7 @@ services:
       - REACT_APP_BACKEND_SERVER=$REACT_APP_BACKEND_SERVER  
     # Add volumnes
     volumes:
+      # NOT in production
       # Inside container
       - /client/node_modules
       # Outside container

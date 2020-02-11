@@ -1,16 +1,10 @@
 # Specify a base image
-FROM node:alpine As builder
+FROM node:alpine
 WORKDIR /client
 COPY ./package.json ./
-RUN npm install
+RUN npm install && npm install -g serve
 COPY ./ ./
 RUN npm run build
-
-# Install some dependencies
-FROM node:alpine
-RUN npm install -g serve
-WORKDIR /client
-COPY --from=builder /client/build .
 EXPOSE 3002
 
 # Default Command

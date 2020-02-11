@@ -17,12 +17,6 @@ services:
       - DATABASE_USERNAME=$DATABASE_USERNAME
       - DATABASE_PASSWORD=$DATABASE_PASSWORD
       - BACKEND_SECRET=$BACKEND_SECRET
-    # Add volumnes
-    volumes:
-      # Inside container
-      - /backend/node_modules
-      # Outside container
-      - ./backend:/backend
     ports:
       - "3001:3001"
     depends_on:
@@ -40,12 +34,6 @@ services:
     environment: 
       - NODE_PATH=$NODE_PATH
       - REACT_APP_BACKEND_SERVER=$REACT_APP_BACKEND_SERVER  
-    # Add volumnes
-    volumes:
-      # Inside container
-      - /client/node_modules
-      # Outside container
-      - ./client:/client
     ports:
         - "3002:3002"
     networks:
