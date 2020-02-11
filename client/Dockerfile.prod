@@ -6,7 +6,9 @@ WORKDIR /client
 COPY ./package.json ./
 RUN npm install
 COPY ./ ./
+RUN npm install -g serve
+RUN npm run build
 EXPOSE 3002
 
 # Default Command
-CMD ["npm", "run", "start"]
+CMD ["serve", "-p", "3002", "-s", "build"]
