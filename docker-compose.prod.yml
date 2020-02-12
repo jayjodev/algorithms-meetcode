@@ -23,19 +23,15 @@ services:
       - mongo_db
     networks:
       - shopthing
-      
+    
   client:
     container_name: client
     restart: always
     build:
       context: ./client
       dockerfile: Dockerfile.prod
-    env_file: .env
-    environment: 
-      - NODE_PATH=$NODE_PATH
-      - REACT_APP_BACKEND_SERVER=$REACT_APP_BACKEND_SERVER  
     ports:
-        - "3002:3002"
+      - "3002:3002"
     networks:
       - shopthing
           
