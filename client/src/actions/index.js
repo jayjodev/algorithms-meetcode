@@ -40,11 +40,6 @@ export const signin = (formProps, callback) => async dispath => {
 
 export const calculation = (formProps, callback) => async dispath => {
     try {
-        console.log(process.env.REACT_APP_BACKEND_SERVER)
-        console.log(process.env.REACT_APP_BACKEND_SERVER)
-        console.log(process.env.NODE_PATH)
-        console.log(process.env.NODE_ENV)
-
         const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}/algorithm/median-prime-number`,
             formProps
         );
