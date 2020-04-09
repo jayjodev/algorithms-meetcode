@@ -1,4 +1,4 @@
-##  Interview Test for `Shopthing`
+##  Basic React-Project
 
 Web IP Address: http://167.99.182.203/
 
@@ -10,12 +10,10 @@ Web IP Address: http://167.99.182.203/
     ```code
     $ docker-compose up -d --build
     ```
-
 3. Build the project for Production
     ```code
     $ docker-compose -f docker-compose.prod.yml up -d --build
     ```
-
 4. Test [backend and client]
     ```
     $ npm run test

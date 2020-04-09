@@ -9,12 +9,10 @@ class Medianprime extends Component {
         this.props.calculation(formProps, () => {
         });
     };
+    
     render() {
         const { handleSubmit } = this.props;
         const median_primes = JSON.stringify(this.props.result_median_primes);
-        const primes = JSON.stringify(this.props.result_primes);
-        const user_input = JSON.stringify(this.props.user_input);
-
         return (
             <form onSubmit={handleSubmit(this.onSubmit)}>
                 <fieldset>
@@ -30,10 +28,6 @@ class Medianprime extends Component {
                 <button>Calculate!</button>
                 <div>
                     <h3>Result: {this.props.result_median_primes ? median_primes : null}</h3>
-                    <p>
-                        Input number: {this.props.user_input ? user_input : null} <br />
-                        Primes numbers: {this.props.result_primes ? primes : null}
-                    </p>
                 </div>
                 <div>
                     <p>{this.props.server_error}</p>

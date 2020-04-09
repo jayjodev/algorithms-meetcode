@@ -2,10 +2,10 @@ const request = require('supertest');
 const axios = require('axios');
 require('dotenv').config()
 
-const shopThing_Backend = process.env.BACKEND_SERVER_TEST || "http://localhost:3001";
+const back_end = process.env.BACKEND_SERVER_TEST || "http://localhost:3001";
 
 const defaultUser = {
-    email: "shopthing@shopthing.com",
+    email: "jayjodev@gmail.com",
     password: 'password',
 }
 
@@ -13,7 +13,7 @@ const token = async defaultUser => {
     try {
         const { data } = await axios({
             method: "post",
-            url: `${shopThing_Backend}/signin`,
+            url: `${back_end}/signin`,
             data: defaultUser,
         })
         return data.token;
@@ -30,7 +30,7 @@ const token = async defaultUser => {
 // requireAuth  APIs
 describe('Check requireAuth', function () {
     it('Successfully checked requireAuth APIs', async done => {
-        request(shopThing_Backend)
+        request(back_end)
             .get('/')
             .set({ Authorization: await token(defaultUser) })
             .expect(200)

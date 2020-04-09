@@ -22,7 +22,7 @@ services:
     depends_on:
       - mongo_db
     networks:
-      - shopthing
+      - algorithms
     
   client:
     container_name: client
@@ -33,7 +33,7 @@ services:
     ports:
       - "3002:3002"
     networks:
-      - shopthing
+      - algorithms
           
   nginx:
     container_name: ngnix
@@ -44,7 +44,7 @@ services:
     depends_on:
       - client
     networks:
-      - shopthing
+      - algorithms
 
   mongo_db:
     image: mongo:latest
@@ -65,10 +65,10 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - shopthing
+      - algorithms
   
 volumes:
   mongo_data:
     
 networks:
-  shopthing:
+  algorithms:
