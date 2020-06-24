@@ -10,7 +10,7 @@ export default () => {
             </p>
             <Medianprime />
             <p>
-                Design by Gangrae Jo
+                Design by Jay Jo
             </p>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <p>Copyright © 2020 MeetCode All rights Reserved.</p>
